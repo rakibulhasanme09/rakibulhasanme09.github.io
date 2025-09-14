@@ -578,7 +578,7 @@
             }
 
             .skills__container {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
                 column-gap: 2rem;
                 align-items: center;
                 text-align: initial;
@@ -608,7 +608,15 @@
 </head>
 
 <body>
-    <canvas id="bg-canvas"></canvas>
+    <!-- Gradient background -->
+    <div style="
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #0f172a 50%, #0ea4e9 140%, #1e293b 100%);
+    "></div>
     <!--===== HEADER =====-->
     <header class="l-header">
         <nav class="nav bd-grid">
@@ -622,7 +630,7 @@
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <!-- <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li> -->
                 </ul>
             </div>
 
@@ -695,90 +703,74 @@
         <section class="skills section" id="skills">
             <h2 class="section-title">Skills</h2>
 
-            <h2 class="skills__subtitle bd-grid">Profesional Skills</h2>
+            <h2 class="skills__subtitle bd-grid">Professional Skills</h2>
 
-            <div class="skills__container bd-grid">
-                <div class="skills__data">
-                    <div class="skills__names">
-                        <i class='bx bxl-html5 skills__icon'></i>
-                        <span class="skills__name">HTML</span>
-                    </div>
-                    <div class="skills__bar skills__html">
-
-                    </div>
-                    <div>
-                        <span class="skills__percentage">95%</span>
-                    </div>
-                </div>
-                <div class="skills__data">
-                    <div class="skills__names">
-                        <i class='bx bxl-css3 skills__icon'></i>
-                        <span class="skills__name">CSS</span>
-                    </div>
-                    <div class="skills__bar skills__css">
-
-                    </div>
-                    <div>
-                        <span class="skills__percentage">85%</span>
-                    </div>
-                </div>
-                <div class="skills__data">
-                    <div class="skills__names">
-                        <i class='bx bxl-javascript skills__icon'></i>
-                        <span class="skills__name">JavaScript</span>
-                    </div>
-                    <div class="skills__bar skills__js">
-
-                    </div>
-                    <div>
-                        <span class="skills__percentage">65%</span>
-                    </div>
-                </div>
-                <div class="skills__data">
-                    <div class="skills__names">
-                        <i class='bx bxl-react skills__icon'></i>
-                        <span class="skills__name">React</span>
-                    </div>
-                    <div class="skills__bar skills__react">
-
-                    </div>
-                    <div>
-                        <span class="skills__percentage">50%</span>
-                    </div>
-                </div>
-                <div class="skills__data">
-                    <div class="skills__names">
-                        <i class='bx bxl-python skills__icon'></i>
-                        <span class="skills__name">Python</span>
-                    </div>
-                    <div class="skills__bar skills__python">
-
-                    </div>
-                    <div>
-                        <span class="skills__percentage">60%</span>
-                    </div>
-                </div>
-                <div class="skills__data">
-                    <div class="skills__names">
-                        <i class='skills__icon'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M12 3C7.66 3 4 4.83 4 7v10c0 2.17 3.66 4 8 4s8-1.83 8-4V7c0-2.17-3.66-4-8-4m0 2c3.68 0 5.91 1.49 6 2-.09.51-2.32 2-6 2S6.07 7.49 6 7.01C6.07 6.51 8.31 5 12 5M6 9.61c1.48.85 3.64 1.39 6 1.39s4.52-.55 6-1.39V12c-.07.5-2.31 2-6 2s-5.93-1.51-6-2zM12 19c-3.69 0-5.93-1.51-6-2v-2.39c1.48.85 3.64 1.39 6 1.39s4.52-.55 6-1.39V17c-.07.5-2.31 2-6 2">
-                                </path>
-                            </svg></i>
-                        <span class="skills__name">SQL</span>
-                    </div>
-                    <div class="skills__bar skills__sql">
-
-                    </div>
-                    <div>
-                        <span class="skills__percentage">80%</span>
-                    </div>
-                </div>
-
-
-
+            <div class="bd-grid" style="overflow-x:auto;">
+                <table style="
+                    width:100%; 
+                    border-collapse: collapse; 
+                    /* background: rgba(255,255,255,0.01);  */
+                    border-radius: 0.5rem; 
+                    box-shadow: 0px 4px 25px rgba(14,36,49,0.10);
+                    border: 2px solid var(--first-color);
+                    overflow: hidden;
+                ">
+                    <thead>
+                        <tr style="color: var(--first-color);">
+                            <th
+                                style="padding: 0.75rem 1rem; text-align: left; font-size: 1.1rem; border-bottom: 2px solid var(--first-color);">
+                                Skill</th>
+                            <th
+                                style="padding: 0.75rem 1rem; text-align: right; font-size: 1.1rem; border-bottom: 2px solid var(--first-color);">
+                                Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid var(--first-color);">
+                            <td style="padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.7rem;">
+                                <i class='bx bxl-html5 skills__icon'></i> HTML
+                            </td>
+                            <td style="padding: 0.7rem 1rem; text-align: right;">Expert</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid var(--first-color);">
+                            <td style="padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.7rem;">
+                                <i class='bx bxl-css3 skills__icon'></i> CSS
+                            </td>
+                            <td style="padding: 0.7rem 1rem; text-align: right;">Expert</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid var(--first-color);">
+                            <td style="padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.7rem;">
+                                <i class='bx bxl-javascript skills__icon'></i> JavaScript
+                            </td>
+                            <td style="padding: 0.7rem 1rem; text-align: right;">Expert</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid var(--first-color);">
+                            <td style="padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.7rem;">
+                                <i class='bx bxl-react skills__icon'></i> React
+                            </td>
+                            <td style="padding: 0.7rem 1rem; text-align: right;">Advanced</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid var(--first-color);">
+                            <td style="padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.7rem;">
+                                <i class='bx bxl-python skills__icon'></i> Python
+                            </td>
+                            <td style="padding: 0.7rem 1rem; text-align: right;">Expert</td>
+                        </tr>
+                        <tr style="">
+                            <td style="padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.7rem;">
+                                <i class='skills__icon'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 3C7.66 3 4 4.83 4 7v10c0 2.17 3.66 4 8 4s8-1.83 8-4V7c0-2.17-3.66-4-8-4m0 2c3.68 0 5.91 1.49 6 2-.09.51-2.32 2-6 2S6.07 7.49 6 7.01C6.07 6.51 8.31 5 12 5M6 9.61c1.48.85 3.64 1.39 6 1.39s4.52-.55 6-1.39V12c-.07.5-2.31 2-6 2s-5.93-1.51-6-2zM12 19c-3.69 0-5.93-1.51-6-2v-2.39c1.48.85 3.64 1.39 6 1.39s4.52-.55 6-1.39V17c-.07.5-2.31 2-6 2">
+                                        </path>
+                                    </svg>
+                                </i> SQL
+                            </td>
+                            <td style="padding: 0.7rem 1rem; text-align: right;">Expert</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -946,84 +938,6 @@
         // sr.reveal('.home__social-icon', { interval: 200 });
         // sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
-    </script>
-
-    <script>
-        // Particle background animation
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let width = window.innerWidth;
-        let height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-        canvas.style.position = 'fixed';
-        canvas.style.top = 0;
-        canvas.style.left = 0;
-        canvas.style.width = '100vw';
-        canvas.style.height = '100vh';
-        canvas.style.zIndex = '-1';
-        canvas.style.pointerEvents = 'none';
-
-        let particles = [];
-        const PARTICLE_COUNT = 70;
-        const MAX_DIST = 140;
-
-        function randomBetween(a, b) {
-            return a + Math.random() * (b - a);
-        }
-
-        function createParticles() {
-            particles = [];
-            for (let i = 0; i < PARTICLE_COUNT; i++) {
-                particles.push({
-                    x: randomBetween(0, width),
-                    y: randomBetween(0, height),
-                    vx: randomBetween(-0.3, 0.3), // slower speed
-                    vy: randomBetween(-0.3, 0.3), // slower speed
-                    radius: randomBetween(1.2, 2.5)
-                });
-            }
-        }
-
-        function drawParticles() {
-            ctx.clearRect(0, 0, width, height);
-            // Draw only moving dots
-            for (let p of particles) {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
-                ctx.fillStyle = 'rgba(100,200,255,0.7)';
-                ctx.shadowColor = '#1e90ff';
-                ctx.shadowBlur = 8;
-                ctx.fill();
-                ctx.shadowBlur = 0;
-            }
-        }
-
-        function updateParticles() {
-            for (let p of particles) {
-                p.x += p.vx;
-                p.y += p.vy;
-                if (p.x < 0 || p.x > width) p.vx *= -1;
-                if (p.y < 0 || p.y > height) p.vy *= -1;
-            }
-        }
-
-        function animate() {
-            updateParticles();
-            drawParticles();
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', () => {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-            createParticles();
-        });
-
-        createParticles();
-        animate();
     </script>
 </body>
 
